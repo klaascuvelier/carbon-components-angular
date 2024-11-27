@@ -1,93 +1,106 @@
 {
-	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-	"version": 1,
-	"newProjectRoot": "projects",
-	"projects": {
-		"carbon-components-angular": {
-			"root": "src",
-			"sourceRoot": "src",
-			"projectType": "library",
-			"prefix": "ibm",
-			"architect": {
-				"build": {
-					"builder": "@angular-devkit/build-angular:ng-packagr",
-					"options": {
-						"tsConfig": "./src/tsconfig.lib.json",
-						"project": "./src/ng-package.json"
-					},
-					"configurations": {
-						"production": {
-							"tsConfig": "./src/tsconfig.lib.json"
-						}
-					}
-				},
-				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
-					"options": {
-						"main": "src/test.ts",
-						"karmaConfig": "./karma.conf.js",
-						"tsConfig": "./tsconfig.spec.json"
-					}
-				},
-				"storybook": {
-					"builder": "@storybook/angular:start-storybook",
-					"options": {
-						"browserTarget": "carbon-components-angular:build",
-						"port": 6006,
-						"styles": [
-							"./.storybook/preview.scss"
-						],
-						"compodoc": true,
-						"compodocArgs": [
-							"-e",
-							"json",
-							"--disablePrivate",
-							"--disableProtected",
-							"--disableLifeCycleHooks",
-							"--disableInternal",
-							"-d",
-							"dist/docs/"
-						],
-						"configDir": ".storybook"
-					}
-				},
-				"build-storybook": {
-					"builder": "@storybook/angular:build-storybook",
-					"options": {
-						"browserTarget": "carbon-components-angular:build",
-						"styles": [
-							"./.storybook/preview.scss"
-						],
-						"compodoc": true,
-						"compodocArgs": [
-							"-e",
-							"json",
-							"--disablePrivate",
-							"--disableProtected",
-							"--disableLifeCycleHooks",
-							"--disableInternal",
-							"-d",
-							"dist/docs/",
-							"-t"
-						],
-						"configDir": ".storybook",
-						"outputDir": "dist/docs/storybook",
-						"enableProdMode": false
-					}
-				}
-			}
-		}
-	},
-	"schematics": {
-		"@schematics/angular:component": {
-			"prefix": "ibm",
-			"style": "css"
-		},
-		"@schematics/angular:directive": {
-			"prefix": "ibm"
-		}
-	},
-	"cli": {
-		"analytics": "738e9b32-8ce4-448f-b650-921e5656f770"
-	}
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "carbon-components-angular": {
+      "root": "src",
+      "sourceRoot": "src",
+      "projectType": "library",
+      "prefix": "ibm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "./src/tsconfig.lib.json",
+            "project": "./src/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "./src/tsconfig.lib.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "tsConfig": "./tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "carbon-components-angular:build",
+            "port": 6006,
+            "styles": [
+              "./.storybook/preview.scss"
+            ],
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "--disablePrivate",
+              "--disableProtected",
+              "--disableLifeCycleHooks",
+              "--disableInternal",
+              "-d",
+              "dist/docs/"
+            ],
+            "configDir": ".storybook"
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "carbon-components-angular:build",
+            "styles": [
+              "./.storybook/preview.scss"
+            ],
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "--disablePrivate",
+              "--disableProtected",
+              "--disableLifeCycleHooks",
+              "--disableInternal",
+              "-d",
+              "dist/docs/",
+              "-t"
+            ],
+            "configDir": ".storybook",
+            "outputDir": "dist/docs/storybook",
+            "enableProdMode": false
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ],
+            "eslintConfig": "src/eslint.config.js"
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "ibm",
+      "style": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "ibm"
+    }
+  },
+  "cli": {
+    "analytics": "738e9b32-8ce4-448f-b650-921e5656f770",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  }
 }
