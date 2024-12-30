@@ -1,4 +1,4 @@
-/* tslint:disable variable-name */
+
 
 import { importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";

@@ -1,4 +1,4 @@
-/* tslint:disable variable-name */
+
 
 import { moduleMetadata, Meta, Story } from "@storybook/angular";
 import { LayerModule } from "../layer";

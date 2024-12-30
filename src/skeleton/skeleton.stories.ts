@@ -1,4 +1,4 @@
-/* tslint:disable variable-name */
+
 
 import { moduleMetadata, Meta } from "@storybook/angular";
 import { SkeletonModule, SkeletonPlaceholder } from "./";

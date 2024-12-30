@@ -1,4 +1,4 @@
-/* tslint:disable variable-name */
+
 
 import { CommonModule } from "@angular/common";
 import { Meta, moduleMetadata } from "@storybook/angular";

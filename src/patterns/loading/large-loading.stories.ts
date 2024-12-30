@@ -1,4 +1,4 @@
-/* tslint:disable variable-name */
+
 
 import { Component } from "@angular/core";
 import { moduleMetadata, Meta } from "@storybook/angular";
